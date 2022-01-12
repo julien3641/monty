@@ -41,6 +41,22 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct list_s - variables used in function
+ * @token: a pointer to a token
+ * @len: ??
+ *
+ * Description: list of variables used in functions
+ * for stack, queues, LIFO, FIFO
+ */
+typedef struct current_line
+{
+	char *command;
+	char *argument;
+	size_t len;
+} current_line;
+extern current_line cline;
+
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);

@@ -9,6 +9,8 @@
 void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
+	/*char *token;*/
+	int is_number;
 	(void)line_number;
 
 	new_node = malloc(sizeof(stack_t));
@@ -17,6 +19,8 @@ void _push(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "Error: malloc failed");
 		exit(EXIT_FAILURE);
 	}
+	is_number = atoi(cline.argument);
+	new_node->n = is_number;
 	new_node->next = NULL;
 
 	if (*stack == NULL)
