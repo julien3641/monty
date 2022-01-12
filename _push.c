@@ -13,6 +13,8 @@ void _push(stack_t **stack, unsigned int line_number)
 	int is_number;
 	(void)line_number;
 
+	printf("HELLO PUSHHHHHHH\n");
+
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{

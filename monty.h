@@ -49,7 +49,7 @@ typedef struct instruction_s
  * Description: list of variables used in functions
  * for stack, queues, LIFO, FIFO
  */
-typedef struct current_line
+typedef struct current_line_p
 {
 	char *command;
 	char *argument;
