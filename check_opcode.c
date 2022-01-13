@@ -5,7 +5,7 @@
  * @line_number: line number for error message
  * Return: 0 on success or EXIT_FAILURE on error
  */
-int check_opcode(unsigned int line_number)
+int check_opcode(unsigned int *line_number)
 {
 	int i = 0;
 	instruction_t list[] = INSTRUCTION;
@@ -19,22 +19,22 @@ int check_opcode(unsigned int line_number)
 				if (cline.argument == NULL)
 				{
 					fprintf(stderr, "L%u: usage: push integer\n",
-						line_number);
+						*line_number);
 					exit(EXIT_FAILURE);
 				}
 				else
 					check_digit(line_number);
 			}
-			list[i].f(&cline.stack, line_number);
+			list[i].f(&cline.stack, *line_number);
 			break;
 		}
 
 	if (list[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n",
-			line_number, cline.command);
+			*line_number, cline.command);
 		exit(EXIT_FAILURE);
 	}
-	line_number++;
+	(*line_number)++;
 	return (0);
 }

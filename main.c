@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 		if (cline.command == NULL || cline.command[0] == '#')
 			continue;
 		cline.argument = strtok(NULL, " \n");
-		check_opcode(line_number);
+		check_opcode(&line_number);
 	}
 	free(cline.line);
 	free_stack(&cline.stack);

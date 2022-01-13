@@ -77,8 +77,8 @@ extern current_line cline;
 
 /* Prototype process */
 int process(void);
-int check_digit(unsigned int line_number);
-int check_opcode(unsigned int line_number);
+int check_digit(unsigned int *line_number);
+int check_opcode(unsigned int *line_number);
 void free_stack(stack_t **stack);
 
 /* Prototype opcode */

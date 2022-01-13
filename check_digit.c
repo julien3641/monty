@@ -5,7 +5,7 @@
  * @line_number: line number for error message
  * Return: 0 on success or EXIT_FAILURE on error
  */
-int check_digit(unsigned int line_number)
+int check_digit(unsigned int *line_number)
 {
 	int j = 0;
 
@@ -15,9 +15,9 @@ int check_digit(unsigned int line_number)
 	{
 		if (isdigit(cline.argument[j]) == 0)
 		{
-			line_number++;
+			(*line_number)++;
 			fprintf(stderr, "L%d: usage: push integer\n",
-				line_number);
+				*line_number);
 			exit(EXIT_FAILURE);
 		}
 	}
