@@ -11,11 +11,22 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 General
 
     What do LIFO and FIFO mean
+
+    FIFO stand for First In First Out
+    LIFO stand for Last In First Out
+
     What is a stack, and when to use it
+    A stack is a linear data structure, collection of items of the same type. The stack follow the LIFO method and the insertion and a the deletion is happen only at one the end.
+
     What is a queue, and when to use it
+    A queue in C is basically a linear data structure to store and manipulate the data elements. The queue follow the FIFO method so the elements are entered into the array at the first position and are remove in first as well. 
+
     What are the common implementations of stacks and queues
     What are the most common use cases of stacks and queues
-    What is the proper way to use global variables
+    Stacks and Queues are commonly used when implementing Breadth-First-Search (BFS) or Depth-First-Search (DFS) for trees and graphs. Queues are commonly used for BFS and Stacks for DFS.
+
+    What are the most common use cases of stacks and queues
+    Global variables should be used when multiple functions need to access the data or write to an object. 
 
 Requirements
 General
