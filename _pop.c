@@ -2,9 +2,9 @@
 
 /**
  * _pop - function that remove the top element of the stack
- * @stack:
- * @line_number:
- * Return:
+ * @stack: the stack
+ * @line_number: the line number for error
+ * Return: void
  */
 void _pop(stack_t **stack, unsigned int line_number)
 {
@@ -19,7 +19,7 @@ void _pop(stack_t **stack, unsigned int line_number)
 
 	tmp = *stack;
 	*stack = (*stack)->next;
-
+	if (*stack != NULL) /*if next line is null*/
+		(*stack)->prev = NULL;
 	free(tmp);
-	(*stack)->prev = NULL;
 }
