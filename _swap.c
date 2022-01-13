@@ -2,15 +2,15 @@
 
 /**
  * _swap - function that swaps the top two elements of the stack
- * @stack:
- * @line_number:
- * Return:
+ * @stack: the stack
+ * @line_number: the line number for error
+ * Return: void
  */
 void _swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current_node;
 	unsigned int number_node;
-	int i, *tmp;
+	int i, tmp1, tmp2;
 
 	current_node = *stack;
 	number_node = 0;
@@ -29,8 +29,9 @@ void _swap(stack_t **stack, unsigned int line_number)
 
 	else
 	{
-		tmp = (*stack)->n;
-		(*stack)->n = (*stack)->next->n;
-		(*stack)->next->n = tmp;
+		tmp1 = (*stack)->n;
+		tmp2 = (*stack)->next->n;
+		(*stack)->n = tmp2;
+		(*stack)->next->n = tmp1;
 	}
 }
