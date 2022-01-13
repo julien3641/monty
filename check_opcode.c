@@ -18,6 +18,7 @@ int check_opcode(unsigned int *line_number)
 			{
 				if (cline.argument == NULL)
 				{
+					(*line_number)++;
 					fprintf(stderr, "L%u: usage: push integer\n",
 						*line_number);
 					exit(EXIT_FAILURE);
