@@ -76,7 +76,8 @@ extern current_line cline;
 		{"div", _div},\
 		{"mod", _mod},\
 		{"pchar", _pchar},\
-		{NULL, NULL} \
+		{"pstr", _pstr},\
+		{NULL, NULL}	\
 	}
 
 /* Prototype process */
@@ -98,5 +99,5 @@ void _mul(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
-
+void _pstr(stack_t **stack, unsigned int line_number);
 #endif /* MONTY_H */
