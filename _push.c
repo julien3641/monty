@@ -2,18 +2,15 @@
 
 /**
  * _push - function that adds a new node at the beginning of a stack
- * @stack:
- * @line_number:
+ * @stack: the stack
+ * @line_number: The line number for error
  * Return: Nothing
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
-	/*char *token;*/
 	int is_number;
 	(void)line_number;
-
-	printf("HELLO PUSHHHHHHH\n");
 
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
