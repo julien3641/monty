@@ -11,14 +11,13 @@ int check_opcode(unsigned int *line_number)
 	instruction_t list[] = INSTRUCTION;
 
 	for (i = 0; list[i].opcode != NULL; i++)
-
+	{
 		if (strcmp(list[i].opcode, cline.command) == 0)
 		{
 			if (strcmp(cline.command, "push") == 0)
 			{
 				if (cline.argument == NULL)
 				{
-					(*line_number)++;
 					fprintf(stderr, "L%u: usage: push integer\n",
 						*line_number);
 					exit(EXIT_FAILURE);
@@ -29,7 +28,7 @@ int check_opcode(unsigned int *line_number)
 			list[i].f(&cline.stack, *line_number);
 			break;
 		}
-
+	}
 	if (list[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n",

@@ -37,7 +37,10 @@ int main(int argc, char *argv[])
 		}
 		cline.command = strtok(cline.line, " \n");
 		if (cline.command == NULL || cline.command[0] == '#')
+		{
+			line_number++;
 			continue;
+		}
 		cline.argument = strtok(NULL, " \n");
 		check_opcode(&line_number);
 	}

@@ -13,10 +13,8 @@ int check_digit(unsigned int *line_number)
 		j = 1;
 	for (; cline.argument[j] != '\0'; j++)
 	{
-		printf("cline.argument: %d\n", atoi(cline.argument));
 		if (isdigit(cline.argument[j]) == 0)
 		{
-			printf("line number avant incrémentation: %d\n", *line_number);
 			fprintf(stderr, "L%d: usage: push integer\n",
 				*line_number);
 			exit(EXIT_FAILURE);
