@@ -43,20 +43,42 @@ typedef struct instruction_s
 
 /**
  * struct list_s - variables used in function
- * @token: a pointer to a token
- * @len: ??
+ * @stack: a pointer to the beginning of a stack
+ * @command: a pointer to the first token
+ * @argument: a pointer to the second token
+ * @line: a pointer to the string of getline
+ * @len: the lenght of the line
  *
  * Description: list of variables used in functions
  * for stack, queues, LIFO, FIFO
  */
 typedef struct current_line_p
 {
+	stack_t *stack;
 	char *command;
 	char *argument;
+	char *line;
 	size_t len;
 } current_line;
 extern current_line cline;
 
+#define INSTRUCTION { \
+		{"push", _push},\
+		{"pall", _pall},\
+		{"pint", _pint},\
+		{"pop", _pop},\
+		{"swap", _swap},\
+		{"nop", _nop},\
+	        {NULL, NULL} \
+	}
+
+/* Prototype process */
+int process(void);
+int check_digit(unsigned int line_number);
+int check_opcode(unsigned int line_number);
+void free_stack(stack_t **stack);
+
+/* Prototype opcode */
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
