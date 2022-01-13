@@ -2,9 +2,9 @@
 
 /**
  * _nop - function that doesn't do anything
- * @stack:
- * @line_number:
- * Return:
+ * @stack: The stack
+ * @line_number: The line number for error messages
+ * Return: void
  */
 void _nop(stack_t **stack, unsigned int line_number)
 {
