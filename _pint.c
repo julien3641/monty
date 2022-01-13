@@ -2,14 +2,14 @@
 
 /**
  * _pint - function that prints the value at the top of the stack
- * @stack:
- * @line_number:
- * Return:
+ * @stack: the stack
+ * @line_number: the line number for error
+ * Return: void
  */
 void _pint(stack_t **stack, unsigned int line_number)
 {
 	if (*stack != NULL)
-		printf("%d", (*stack)->n);
+		printf("%d\n", (*stack)->n);
 	else
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty", line_number);

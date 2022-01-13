@@ -2,9 +2,9 @@
 
 /**
  * _pall - function that print all the stack
- * @stack: Pointer to the stack
- * @line_number: line number
- * Return: 0
+ * @stack: the stack
+ * @line_number: the line number for error
+ * Return: void
  */
 
 void _pall(stack_t **stack, unsigned int line_number)
