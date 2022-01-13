@@ -9,7 +9,9 @@ int check_digit(unsigned int line_number)
 {
 	int j = 0;
 
-	for (j = 0; cline.argument[j] != '\0'; j++)
+	if (cline.argument[0] == '-')
+		j = 1;
+	for (; cline.argument[j] != '\0'; j++)
 	{
 		if (isdigit(cline.argument[j]) == 0)
 		{
