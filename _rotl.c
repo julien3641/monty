@@ -13,7 +13,7 @@ void _rotl(stack_t **stack, unsigned int line_number)
 
 	tmp = *stack;
 	move = *stack;
-	if (*stack != NULL)
+	if (*stack != NULL || stack != NULL)
 	{
 
 		while (move->next != NULL)
