@@ -2,8 +2,8 @@
 
 /**
  * check_digit - function that ckeck if argument is a digit
- * ATTENTION, voir pour gérer les nombres négatifs
- * @Return: 0 on success or EXIT_FAILURE on error
+ * @line_number: line number for error message
+ * Return: 0 on success or EXIT_FAILURE on error
  */
 int check_digit(unsigned int line_number)
 {

@@ -1,4 +1,3 @@
-#define _GNU_SOURCE
 #include "monty.h"
 current_line cline;
 

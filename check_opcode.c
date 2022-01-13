@@ -2,6 +2,7 @@
 
 /**
  * check_opcode - function that check the opcode
+ * @line_number: line number for error message
  * Return: 0 on success or EXIT_FAILURE on error
  */
 int check_opcode(unsigned int line_number)
