@@ -13,7 +13,7 @@ void _pstr(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 
 	tmp = *stack;
-	if (!tmp)
+	if (tmp != NULL || tmp->n == '\0')
 		printf("\n");
 	else
 		while (tmp != NULL)
