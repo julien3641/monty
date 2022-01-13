@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _mul - function that adds the top two elements of the stack
+ * _mul - function that multiple the top two elements of the stack
  * @stack: the stack
  * @line_number: line number for error messages
  * Return: Nothing
