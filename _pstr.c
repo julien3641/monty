@@ -15,13 +15,15 @@ void _pstr(stack_t **stack, unsigned int line_number)
 	tmp = *stack;
 	if ((*stack) == NULL)
 		printf("\n");
-
 	while (tmp)
 	{
-		if (tmp->n <= 0 || tmp->n > 127)
-			break;
-		printf("%c", tmp->n);
-		tmp = tmp->next;
-	}
+		if (tmp->n != 0 && (tmp->n > 0 && tmp->n <= 127))
+			{
+				printf("%c", tmp->n);
+				tmp = tmp->next;
+			}
+			else
+				break;
+			}
 	printf("\n");
 }
