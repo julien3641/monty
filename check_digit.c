@@ -15,6 +15,7 @@ int check_digit(unsigned int line_number)
 	{
 		if (isdigit(cline.argument[j]) == 0)
 		{
+			line_number++;
 			fprintf(stderr, "L%d: usage: push integer\n",
 				line_number);
 			exit(EXIT_FAILURE);
