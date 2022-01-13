@@ -2,9 +2,9 @@
 
 /**
  * _add - function that adds the top two elements of the stack
- * @stack:
- * @line_number:
- * Return:
+ * @stack: the stack
+ * @line_number: line number for error messages
+ * Return: Nothing
  */
 
 void _add(stack_t **stack, unsigned int line_number)

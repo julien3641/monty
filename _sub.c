@@ -2,9 +2,9 @@
 
 /**
  * _sub - function that minus the top two elements of the stack
- * @stack:
- * @line_number:
- * Return:
+ * @stack: the stack
+ * @line_number: the line number of error
+ * Return: Nothing
  */
 
 void _sub(stack_t **stack, unsigned int line_number)
