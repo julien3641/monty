@@ -11,7 +11,7 @@ void _rotl(stack_t **stack, unsigned int line_number)
 	stack_t *tmp, *move;
 	(void)line_number;
 
-	if (*stack != NULL || (*stack)->next != NULL)
+	if (*stack != NULL)
 	{
 		tmp = *stack;
 		move = *stack;
