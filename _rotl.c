@@ -16,11 +16,12 @@ void _rotl(stack_t **stack, unsigned int line_number)
 		tmp = *stack;
 		move = *stack;
 
+		*stack = (*stack)->next;
+                (*stack)->prev = NULL;
+
 		while (move->next != NULL)
 			move = move->next;
 
-		*stack = (*stack)->next;
-                (*stack)->prev = NULL;
 		tmp->next = NULL;
 		tmp->prev = move;
 		move->next = tmp;
