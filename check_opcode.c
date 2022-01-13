@@ -15,8 +15,16 @@ int check_opcode(unsigned int line_number)
 		if (strcmp(list[i].opcode, cline.command) == 0)
 		{
 			if (strcmp(cline.command, "push") == 0)
-				check_digit(line_number);
-
+			{
+				if (cline.argument == NULL)
+				{
+					fprintf(stderr, "L%u: usage: push integer\n",
+						line_number);
+					exit(EXIT_FAILURE);
+				}
+				else
+					check_digit(line_number);
+			}
 			list[i].f(&cline.stack, line_number);
 			break;
 		}

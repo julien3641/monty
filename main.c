@@ -17,20 +17,17 @@ int main(int argc, char *argv[])
 	cline.stack = NULL;
 	cline.command = NULL;
 	cline.len = 0;
-
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-
 	cmd = fopen(argv[1], "r");
 	if (cmd == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
 	while ((getline(&cline.line, &cline.len, cmd)) != -1)
 	{
 		if (*cline.line == '\n')
@@ -39,6 +36,8 @@ int main(int argc, char *argv[])
 			continue;
 		}
 		cline.command = strtok(cline.line, " \n");
+		if (cline.command == NULL || cline.command[0] == '#')
+			continue;
 		cline.argument = strtok(NULL, " \n");
 		check_opcode(line_number);
 	}
