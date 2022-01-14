@@ -78,6 +78,7 @@ extern current_line cline;
 		{"pchar", _pchar},\
 		{"pstr", _pstr},\
 		{"rotl", _rotl},\
+		{"rotr", _rotr},\
 		{NULL, NULL}\
 	}
 
@@ -102,5 +103,6 @@ void _mod(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
 void _rotl(stack_t **stack, unsigned int line_number);
+void _rotr(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */
