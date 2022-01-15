@@ -8,20 +8,11 @@
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
-	int return_queue_process, return_stack_process;
 	(void)line_number;
 
 	if (cline.check_process == 1)
-	{
-		return_queue_process = queue_process(stack);
-		if (return_queue_process == 0)
-			return;
-	}
+		queue_process(stack);
 
 	else
-	{
-		return_stack_process = stack_process(stack);
-		if (return_stack_process == 0)
-			return;
-	}
+		stack_process(stack);
 }

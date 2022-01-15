@@ -12,26 +12,26 @@ int stack_process(stack_t **stack)
 	int is_number;
 
 	new_node = malloc(sizeof(stack_t));
-        if (new_node == NULL)
-        {
-                fprintf(stderr, "Error: malloc failed");
-                exit(EXIT_FAILURE);
-        }
-        is_number = atoi(cline.argument);
-        new_node->n = is_number;
-        new_node->next = NULL;
+	if (new_node == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed");
+		exit(EXIT_FAILURE);
+	}
+	is_number = atoi(cline.argument);
+	new_node->n = is_number;
+	new_node->next = NULL;
 
-        if (*stack == NULL)
-        {
-                new_node->prev = NULL;
-                *stack = new_node;
+	if (*stack == NULL)
+	{
+		new_node->prev = NULL;
+		*stack = new_node;
 		return (0);
-        }
-        else
-        {
-                new_node->next = *stack;
-                (*stack)->prev = new_node;
-                *stack = new_node;
-        }
+	}
+	else
+	{
+		new_node->next = *stack;
+		(*stack)->prev = new_node;
+		*stack = new_node;
+	}
 	return (0);
 }
