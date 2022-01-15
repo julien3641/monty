@@ -8,8 +8,7 @@
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_node;
-	int is_number, return_queue_process;
+	int return_queue_process, return_stack_process;
 	(void)line_number;
 
 	if (cline.check_process == 1)
@@ -18,26 +17,11 @@ void _push(stack_t **stack, unsigned int line_number)
 		if (return_queue_process == 0)
 			return;
 	}
-	
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed");
-		exit(EXIT_FAILURE);
-	}
-	is_number = atoi(cline.argument);
-	new_node->n = is_number;
-	new_node->next = NULL;
 
-	if (*stack == NULL)
-	{
-		new_node->prev = NULL;
-		*stack = new_node;
-	}
 	else
 	{
-		new_node->next = *stack;
-		(*stack)->prev = new_node;
-		*stack = new_node;
+		return_stack_process = stack_process(stack);
+		if (return_stack_process == 0)
+			return;
 	}
 }
