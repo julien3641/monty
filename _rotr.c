@@ -3,7 +3,7 @@
 /**
  * _rotr - function that rotates the stack to the bottom
  * @stack: the stack
- * @line_nimber: the line number for error message
+ * @line_number: the line number for error message
  * Return: void
  */
 void _rotr(stack_t **stack, unsigned int line_number)
@@ -20,7 +20,7 @@ void _rotr(stack_t **stack, unsigned int line_number)
 			move = move->next;
 
 		move->prev->next = NULL;
-	        move->next = *stack;
+		move->next = *stack;
 		move->prev = tmp;
 		*stack = move;
 		free(tmp);

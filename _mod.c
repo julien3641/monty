@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _mod - function that return the rest of the modulo of 
+ * _mod - function that return the rest of the modulo of
  *  the top two elements of the stack
  * @stack: the stack
  * @line_number: line number for error message
