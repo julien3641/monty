@@ -4,9 +4,9 @@
  * queue_process - function that sets the format of the data to a queue
  * adds a new node at the end of a stack
  * @stack: the stack
- * Return: void
+ * Return: 0 on success or EXIT_FAILURE on error
  */
-void queue_process(stack_t **stack)
+int queue_process(stack_t **stack)
 {
 	stack_t *new_node, *last_node;
 	int is_number;
@@ -25,6 +25,7 @@ void queue_process(stack_t **stack)
 	{
 		new_node->prev = NULL;
 		*stack = new_node;
+		return (0);
 	}
 
 	else
@@ -35,4 +36,5 @@ void queue_process(stack_t **stack)
 		last_node->next = new_node;
 		new_node->prev = last_node;
 	}
+	return (0);
 }

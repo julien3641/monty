@@ -91,7 +91,7 @@ int check_line(unsigned int *line_number);
 int check_digit(unsigned int *line_number);
 int check_opcode(unsigned int *line_number);
 void free_stack(stack_t **stack);
-void queue_process(stack_t **stack);
+int queue_process(stack_t **stack);
 
 /* Prototype opcode */
 void _push(stack_t **stack, unsigned int line_number);
