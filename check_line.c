@@ -15,15 +15,16 @@ int check_line(unsigned int *line_number)
 
 	while ((getline(&cline.line, &cline.len, cline.cmd)) != -1)
 	{
+		(*line_number)++;
 		if (*cline.line == '\n')
 		{
-			(*line_number)++;
+			/*(*line_number)++;*/
 			continue;
 		}
 		cline.command = strtok(cline.line, " \n");
 		if (cline.command == NULL || cline.command[0] == '#')
 		{
-			(*line_number)++;
+			/*(*line_number)++;*/
 			continue;
 		}
 		else if (strcmp(cline.command, "queue") == 0)

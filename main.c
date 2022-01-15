@@ -10,7 +10,7 @@ current_line cline;
 
 int main(int argc, char *argv[])
 {
-	unsigned int line_number = 1;
+	unsigned int line_number = 0;
 
 	cline.line = NULL;
 	cline.stack = NULL;
