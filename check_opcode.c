@@ -29,6 +29,7 @@ int check_opcode(unsigned int *line_number)
 		}
 	if (list[i].opcode == NULL)
 	{
+		(*line_number)++;
 		fprintf(stderr, "L%d: unknown instruction %s\n",
 			*line_number, cline.command);
 		exit(EXIT_FAILURE);
