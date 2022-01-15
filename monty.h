@@ -49,6 +49,8 @@ typedef struct instruction_s
  * @argument: a pointer to the second token
  * @line: a pointer to the string of getline
  * @len: the lenght of the line
+ * @cmd: the command file
+ * @check_process: 1 for queue_process or 0 for stack default process
  *
  * Description: list of variables used in functions
  * for stack, queues, LIFO, FIFO
@@ -60,6 +62,8 @@ typedef struct current_line_p
 	char *argument;
 	char *line;
 	size_t len;
+	FILE *cmd;
+	int check_process;
 } current_line;
 extern current_line cline;
 
@@ -79,14 +83,15 @@ extern current_line cline;
 		{"pstr", _pstr},\
 		{"rotl", _rotl},\
 		{"rotr", _rotr},\
-		{NULL, NULL}\
+		{NULL, NULL}			\
 	}
 
 /* Prototype process */
-int process(void);
+int check_line(unsigned int *line_number);
 int check_digit(unsigned int *line_number);
 int check_opcode(unsigned int *line_number);
 void free_stack(stack_t **stack);
+void queue_process(stack_t **stack);
 
 /* Prototype opcode */
 void _push(stack_t **stack, unsigned int line_number);

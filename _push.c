@@ -12,25 +12,34 @@ void _push(stack_t **stack, unsigned int line_number)
 	int is_number;
 	(void)line_number;
 
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
+	if (cline.check_process == 1)
 	{
-		fprintf(stderr, "Error: malloc failed");
-		exit(EXIT_FAILURE);
+		queue_process(stack);
 	}
-	is_number = atoi(cline.argument);
-	new_node->n = is_number;
-	new_node->next = NULL;
 
-	if (*stack == NULL)
+	else if (cline.check_process == 0)
 	{
-		new_node->prev = NULL;
-		*stack = new_node;
-	}
-	else
-	{
-		new_node->next = *stack;
-		(*stack)->prev = new_node;
-		*stack = new_node;
+
+		new_node = malloc(sizeof(stack_t));
+		if (new_node == NULL)
+		{
+			fprintf(stderr, "Error: malloc failed");
+			exit(EXIT_FAILURE);
+		}
+		is_number = atoi(cline.argument);
+		new_node->n = is_number;
+		new_node->next = NULL;
+
+		if (*stack == NULL)
+		{
+			new_node->prev = NULL;
+			*stack = new_node;
+		}
+		else
+		{
+			new_node->next = *stack;
+			(*stack)->prev = new_node;
+			*stack = new_node;
+		}
 	}
 }
