@@ -50,7 +50,7 @@ typedef struct instruction_s
  * @line: a pointer to the string of getline
  * @len: the lenght of the line
  * @cmd: the command file
- * @check_process: 1 for queue_process or 0 for stack default process
+ * @check_process: 1 for queue process or 0 for stack default process
  *
  * Description: list of variables used in functions
  * for stack, queues, LIFO, FIFO
@@ -90,9 +90,10 @@ extern current_line cline;
 int check_line(unsigned int *line_number);
 int check_digit(unsigned int *line_number);
 int check_opcode(unsigned int *line_number);
-void free_stack(stack_t **stack);
-int queue_process(stack_t **stack);
-int stack_process(stack_t **stack);
+int free_global_process(void);
+void free_stack_queue(stack_t **stack);
+void queue_process(stack_t **stack);
+void stack_process(stack_t **stack);
 
 /* Prototype opcode */
 void _push(stack_t **stack, unsigned int line_number);

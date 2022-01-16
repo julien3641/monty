@@ -12,13 +12,12 @@ int check_digit(unsigned int *line_number)
 	if (cline.argument[0] == '-')
 		j = 1;
 	for (; cline.argument[j] != '\0'; j++)
-	{
 		if (isdigit(cline.argument[j]) == 0)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n",
 				*line_number);
 			exit(EXIT_FAILURE);
 		}
-	}
+
 	return (0);
 }

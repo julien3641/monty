@@ -4,9 +4,9 @@
  * stack_process - function that sets the format of the data to a stack
  * adds a new node at the beginning of a stack
  * @stack: the stack
- * Return: 0 on success or EXIT_FAILURE on error
+ * Return: Nothing
  */
-int stack_process(stack_t **stack)
+void stack_process(stack_t **stack)
 {
 	stack_t *new_node;
 	int is_number;
@@ -25,7 +25,7 @@ int stack_process(stack_t **stack)
 	{
 		new_node->prev = NULL;
 		*stack = new_node;
-		return (0);
+		/*return (0);*/
 	}
 	else
 	{
@@ -33,5 +33,5 @@ int stack_process(stack_t **stack)
 		(*stack)->prev = new_node;
 		*stack = new_node;
 	}
-	return (0);
+	/*return (0);*/
 }

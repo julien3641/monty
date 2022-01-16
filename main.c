@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
+
 	cline.cmd = fopen(argv[1], "r");
 	if (cline.cmd == NULL)
 	{
@@ -29,9 +30,6 @@ int main(int argc, char *argv[])
 
 	check_line(&line_number);
 
-	free(cline.line);
-	free_stack(&cline.stack);
-	fclose(cline.cmd);
-	exit(EXIT_SUCCESS);
+	free_global_process();
 	return (0);
 }

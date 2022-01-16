@@ -17,16 +17,11 @@ int check_line(unsigned int *line_number)
 	{
 		(*line_number)++;
 		if (*cline.line == '\n')
-		{
-			/*(*line_number)++;*/
 			continue;
-		}
+
 		cline.command = strtok(cline.line, " \n");
 		if (cline.command == NULL || cline.command[0] == '#')
-		{
-			/*(*line_number)++;*/
 			continue;
-		}
 		else if (strcmp(cline.command, "queue") == 0)
 		{
 			cline.check_process = 1;
@@ -37,6 +32,7 @@ int check_line(unsigned int *line_number)
 			cline.check_process = 0;
 			continue;
 		}
+
 		cline.argument = strtok(NULL, " \n");
 		check_opcode(line_number);
 	}
