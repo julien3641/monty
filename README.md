@@ -1,3 +1,56 @@
+Monty is a programming and scripting language. This language was designed by David A. Watt.
+This project was about creating a program that read this language.
+
+The First of all you need to understand that there is one command per line in this language.
+
+0.PUSH
+There are two types of PUSH functions :
+        1.Stack Push is an opcode that add an element to the stack by default
+        2.Queue Push is an opcode that add an element to the queue.
+1.PALL
+        Pall is an opcode that prints all the values on the stack, starting from the top.
+2.PINT
+        Pint is an opcode that prints the value at the top of the stack
+3.POP
+        Pop is an opcode that removes the top element of the stack
+4.SWAP
+        Swap swaps the top two elements of the stack
+5.ADD
+        Add is an opcode that adds the two tops elements of the stack
+6.NOP
+        Nop is an opcode that doesn't do anything
+7.SUB
+        Sub is an opcode that substract the top element of the stack from the second element of the \
+stack.
+8.DIV
+        Div is an opcode that divides the second top element of the stack by the top element.
+9.MUL
+        Mul is an opcode that multiplies the second top element of the stack by the top element of t\
+he stack.
+10.MOD
+        Mod is an opcode that computes the rest of the division of the second top element of the sta\
+ck by the top element
+11.PCHAR
+        Pchar is an opcode that prints the char at the top of the stack
+12.PSTR
+        Pstr is an opcode that prints the string starting at the top of the stack
+13.ROTL
+        Rotl is an opcode that rotates the stack to the top
+14.ROTR
+        Rotr is an opcode that rotates the stack to the bottom
+
+The function starts by checking if the number of arguments wrote by the user is 2.
+Then, If the file named in the first command can be open.
+On another hand, the function "CHECK_LINE" read the first line and after, the function check every a\
+rguments of the ligne by tokenization.
+As said bellow a test is done if it is a stack or a queue insertion of data with the push function.
+Into this function we add the "check_opcode" function that check if the first token is an opcode(fun\
+ctionality listed).
+During this test, an other test is done for the value of the push argument. This function "CHECK_DIG\
+IT", check if the second argument of push is an integer.
+During all this process, there were some standards error messages that occured to guide the user.
+At the end we freed all the memory allocated to caree on all this checks.
+
 Resources
 
 Read or watch:
@@ -15,7 +68,7 @@ General
     FIFO stand for First In First Out
     LIFO stand for Last In First Out
 
-    What is a stack, and when to use it
+    What is a stack, and when to use it ?
     A stack is a linear data structure, collection of items of the same type. The stack follow the LIFO method and the insertion and a the deletion is happen only at one the end.
 
     What is a queue, and when to use it
