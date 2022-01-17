@@ -7,35 +7,49 @@ The First of all you need to understand that there is one command per line in th
 There are two types of PUSH functions :
         1.Stack Push is an opcode that add an element to the stack by default
         2.Queue Push is an opcode that add an element to the queue.
+
 1.PALL
         Pall is an opcode that prints all the values on the stack, starting from the top.
+
 2.PINT
         Pint is an opcode that prints the value at the top of the stack
+
 3.POP
         Pop is an opcode that removes the top element of the stack
+
 4.SWAP
         Swap swaps the top two elements of the stack
+
 5.ADD
         Add is an opcode that adds the two tops elements of the stack
+
 6.NOP
         Nop is an opcode that doesn't do anything
+
 7.SUB
         Sub is an opcode that substract the top element of the stack from the second element of the \
 stack.
+
 8.DIV
         Div is an opcode that divides the second top element of the stack by the top element.
+
 9.MUL
         Mul is an opcode that multiplies the second top element of the stack by the top element of t\
 he stack.
+
 10.MOD
         Mod is an opcode that computes the rest of the division of the second top element of the sta\
 ck by the top element
+
 11.PCHAR
         Pchar is an opcode that prints the char at the top of the stack
+
 12.PSTR
         Pstr is an opcode that prints the string starting at the top of the stack
+
 13.ROTL
         Rotl is an opcode that rotates the stack to the top
+
 14.ROTR
         Rotr is an opcode that rotates the stack to the bottom
 
